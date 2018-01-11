@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
     <head>
-        <title>{{title}}</title>
+        <title>{{ title }}</title>
         <style>
             .error {
                 color: red;
@@ -9,22 +9,27 @@
         </style>
     </head>
 <body>
- 
     <nav>
-        <a href='/blog'>ALL MY THOUGHTS FOR THE WORLD!</a>
-        <a href='/newpost'>ADD A NEW THOUGHT!</a>
+        <div style="float:left;">
+            <a href='/'>home</a>
+            <a href='/blog'>all post</a>
+            <a href='/newpost'>new post</a>
+        </div>
+        <div style="float:right;">
+            <a href='/login'>login</a>
+            <a href='/logout'>logout</a>
+        </div>
     </nav>
- 
+    <br />
+    {% block content %}
+    {% endblock %}
     {% with messages = get_flashed_messages(with_categories=True) %}
         <ul>
             {% for category, message in messages %}
-                <li class="{{category}}">{{message}}</li>        
+                <li class="{{ category }}">{{ message }}</li>        
             {% endfor%}
         </ul>
     {% endwith %}
- 
-    {% block content %}
-    {% endblock %}
- 
 </body>
 </html>
+

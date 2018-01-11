@@ -1,17 +1,16 @@
 {% extends "base.html" %}
-
 {% block content %}
-
-<h1 align="center">Add a New and Interesting Thought!</h1>
-         
+<h1>Add a new post</h1>
+          
 <form action = "/newpost" method="POST">
-   <label>Title for your Thought:</label><br>
-   <input type="text" name="title" value="{{ new_title }}" />
-   <br><br><br>   
-   <label>Tell the world about that Thought:</label><br>
-   <textarea name="body" rows="10" cols="30" >{{ new_body }}</textarea>
-   <br><br><br>
-   <input type="submit" value='Add Entry' />
+    <label>Title for your new post:</label><br>
+    <input type="text" name="title" value="{{ new_title }}" />
+    <br><br><br>   
+    <label>Your new post:</label><br>
+    <textarea name="body" rows="10" cols="30" >{{ new_body }}</textarea>
+    <br><br><br>
+    <input type="submit" value='Add Entry' />
 </form>
-
 {% endblock %}
+
+

@@ -39,7 +39,7 @@ def require_login():
         return redirect('/login')
 @app.route('/')
 def index():
-    users = user.query.order_by(user.username).all()
+    users = User.query.order_by(User.username).all()
     return render_template('index.html', title="Home", users = users)       
 @app.route('/login', methods=['POST', 'GET'])
 def login():
